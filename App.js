@@ -15,11 +15,12 @@ app.use("/", (request, response, next) => {
 });
 /*express is basically using App as an array which contains all the specified routes 
 (middlewares) in indexed format (request <-> response)*/
-const server = app.listen(1234, (err) => {
+const PORT=process.env.PORT || 1234
+const server = app.listen(PORT, (err) => {
   if (err) {
     console.log("server crashed");
     throw err;
   } else {
-    console.log("server is running", server.address().port);
+    console.log("server is running", PORT);
   }
 });
