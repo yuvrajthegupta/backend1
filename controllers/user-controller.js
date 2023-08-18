@@ -10,7 +10,7 @@ export const userController = {
     if(doc&&doc._id){
         const plainPassword=userInfo.password
         const dbPassword=doc.password
-        if(hashing.matchPassword(plainPassword,dbPassword)){
+        if(hashing.matchpassword(plainPassword,dbPassword)){
             response.json({message:'Welcome '+doc.name})
         }
         else{
