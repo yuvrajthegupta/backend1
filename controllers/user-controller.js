@@ -5,7 +5,7 @@ import { hashing } from "../utils/encrypt.js";
 export const userController = {
   async login(request, response){
     const userInfo=request.body
-    const doc=await UserModel.findOne({'email':userInfo.email}).exec()
+    const doc=await usermodel.findOne({'email':userInfo.email}).exec()
     console.log("doc is",doc);
     if(doc&&doc._id){
         const plainPassword=userInfo.password
